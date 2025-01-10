@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "cdb4dba5-c63c-4cb6-b0e1-c1c44b784c12",
+		"name": "Drone-Survey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34386551"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"test2\",\r\n  \"email\": \"test2@example.com\",\r\n  \"password\": \"test2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test1@example.com\",\r\n  \"password\": \"test1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/user/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Current User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM1ZjY5NjE0LTc0YzUtNDAyMy1hZmExLThjZDAwZjVmNzUyZiIsImlhdCI6MTczNjQ0Mzk0OCwiZXhwIjoxNzM2NDQ3NTQ4fQ.6qf-J1QqhgVZPiABRqJuoyQfUpxpIInHtML33H4SrzY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/user/me"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwNjJiOTQwMDM2Y2QwMmZiMDA5MiIsImVtYWlsIjoidGVzdDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0ODYzNTIsImV4cCI6MTczNjQ4OTk1Mn0.f97kal2-G4mwFaXmtzVtnbNmyFuZKzNWULIM4wBPmSQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "drone",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwNjJiOTQwMDM2Y2QwMmZiMDA5MiIsImVtYWlsIjoidGVzdDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0OTM0OTAsImV4cCI6MTczNjQ5NzA5MH0.AZ6eSb382WuIGj6MY_Cd0JJqX5_pw-FQvHjFQ4nOZRk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Testq\",\r\n  \"type\": \"testing\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/drone/create"
+					},
+					"response": []
+				},
+				{
+					"name": "allDrones",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwNjJiOTQwMDM2Y2QwMmZiMDA5MiIsImVtYWlsIjoidGVzdDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0OTM0OTAsImV4cCI6MTczNjQ5NzA5MH0.AZ6eSb382WuIGj6MY_Cd0JJqX5_pw-FQvHjFQ4nOZRk",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/drone/all"
+					},
+					"response": []
+				},
+				{
+					"name": "dronesByuserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwZmJkNDUzYjM1MDY2MDU3ODBhMCIsImVtYWlsIjoidGVzdDJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0NDYxNjcsImV4cCI6MTczNjQ0OTc2N30.2Xoy7gC3X_RAkPcdEqNo3hPx2ILlCFB6hJWafDDDM64",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/drone/drones/user"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/drone/drones/assign",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwZmJkNDUzYjM1MDY2MDU3ODBhMCIsImVtYWlsIjoidGVzdDJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0NDYyNjcsImV4cCI6MTczNjQ0OTg2N30.6Yzk3wZN2Z47ZJ2IbhEdxHreKCQWf9m9PujxYeecl2I",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/drone/drones/assign"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "missions",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwNjJiOTQwMDM2Y2QwMmZiMDA5MiIsImVtYWlsIjoidGVzdDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0OTA3MTQsImV4cCI6MTczNjQ5NDMxNH0.IPHVDA4WCQOdvyi7KPZQu7mc0A5-tca4kGXyDc_pBco",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mission 5\",\r\n    \"lat\": 58.7041,\r\n    \"long\": 127.1025,\r\n    \"altitude\": 1000,\r\n    \"radius\": 2000,\r\n    \"speed\": 50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/mission/create"
+					},
+					"response": []
+				},
+				{
+					"name": "waypoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/mission/waypoints/0bb6efab-f56a-4c97-a44d-e7292a0b3a30"
+					},
+					"response": []
+				},
+				{
+					"name": "getUserMissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearwe eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwZmJkNDUzYjM1MDY2MDU3ODBhMCIsImVtYWlsIjoidGVzdDJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0ODgxNTgsImV4cCI6MTczNjQ5MTc1OH0.8t2MGuq8bZcbvNEIWvCIgDU3aZm68tprEabqBrvoedA",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/mission/usermissions"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/mission/delete/M001"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "flight",
+			"item": [
+				{
+					"name": "log",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwNjJiOTQwMDM2Y2QwMmZiMDA5MiIsImVtYWlsIjoidGVzdDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0OTIyMjgsImV4cCI6MTczNjQ5NTgyOH0.Rbkfeac-y90hrih2CNt2Ia55Gf0OlHEJYSFcpdCS1Vw",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/flight/log"
+					},
+					"response": []
+				},
+				{
+					"name": "Logpdf",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODAwNjJiOTQwMDM2Y2QwMmZiMDA5MiIsImVtYWlsIjoidGVzdDFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY0OTIyMjgsImV4cCI6MTczNjQ5NTgyOH0.Rbkfeac-y90hrih2CNt2Ia55Gf0OlHEJYSFcpdCS1Vw",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/flight/logpdf"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
