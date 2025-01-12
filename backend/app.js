@@ -16,7 +16,7 @@ app.use(express.json());
 connectToDb();
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Drone Survey Backend - This is the backend for the Drone Survey application. It is built using Node.js, Express, and MongoDB.');
 });
 
 // ROUTES
